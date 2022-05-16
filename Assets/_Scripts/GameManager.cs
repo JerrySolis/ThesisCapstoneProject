@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     public GameState State;
-
+    public bool intro = true;
     public static event Action<GameState> OnGameStateChange;
 
     void Awake()
@@ -23,7 +23,12 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        UpdateGameState(GameState.Intro);
+    
+        
+       
+            UpdateGameState(GameState.Intro);
+        
+      
     }
 
     public void UpdateGameState(GameState newState)
@@ -65,6 +70,9 @@ public class GameManager : MonoBehaviour
             case GameState.StoryBegin:
                 HandleOnStoryBegin();
                 break;
+            case GameState.InGameMenu:
+                HandleOnInGameMenu();
+                break;
             //put new case here!
 
 
@@ -77,6 +85,12 @@ public class GameManager : MonoBehaviour
         }
 
         OnGameStateChange?.Invoke(newState);
+    }
+
+    private void HandleOnInGameMenu()
+    {
+        Debug.Log("Hold Switch case for choosing category");
+
     }
 
     private  void HandleOnStoryBegin()
@@ -217,7 +231,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+    
     }
 
    
@@ -238,6 +252,7 @@ public enum GameState
     GameOverMenu,
     LevelFinish,
     StoryBegin,
+    InGameMenu,
 
     Quit
 

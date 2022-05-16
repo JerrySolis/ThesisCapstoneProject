@@ -77,14 +77,6 @@ public class MenuManager : MonoBehaviour
 
 
 
-    /*
-    public void StartButton()
-    {
-        GameManager.Instance.UpdateGameState(GameState.StartLevel);
-    }
-
-    */
-
 
 
 

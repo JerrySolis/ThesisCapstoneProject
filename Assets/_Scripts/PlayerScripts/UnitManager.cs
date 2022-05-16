@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UnitManager : MonoBehaviour
 {
-    [SerializeField] private GameObject _SettiingsPnl,  _GameOverMenu, _LevelFinish, _Story;
+    [SerializeField] private GameObject _SettiingsPnl,  _GameOverMenu, _LevelFinish, _Story, _CategoryMenu;
     public GameObject _LevelFailedPnl, Child_LevelFailedPnl, Child_LevelFinishPnl, Comic2;
-    [SerializeField] private Button _SettingsBtn;
+    [SerializeField] private Button _SettingsBtn, menuIG;
+ 
     public static UnitManager Instance;
 
 
@@ -31,8 +33,8 @@ public class UnitManager : MonoBehaviour
         _LevelFailedPnl.SetActive(state == GameState.LevelFailed);
         _LevelFinish.SetActive(state == GameState.LevelFinish);
         _Story.SetActive(state == GameState.StoryBegin);
-
-
+        _CategoryMenu.SetActive(state == GameState.InGameMenu);
+       
 
 
     }
@@ -52,7 +54,7 @@ public class UnitManager : MonoBehaviour
 
     public void RestartBtn()
     {
-        GameManager.Instance.UpdateGameState(GameState.StartGame);
+        SceneManager.LoadSceneAsync("Floor 1 Level 1");
     }
 
     public void Destroy()
@@ -60,9 +62,17 @@ public class UnitManager : MonoBehaviour
         Destroy(_LevelFailedPnl);
     }
 
+    public void MenuIG()
+    {
 
+        GameManager.Instance.UpdateGameState(GameState.InGameMenu);
 
+    }
 
+    public void Floor1SelectLevelbtn()
+    {
+        GameManager.Instance.UpdateGameState(GameState.SelectLevel);
+    }
 
 
 

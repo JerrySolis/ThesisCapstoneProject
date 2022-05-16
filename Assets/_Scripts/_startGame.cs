@@ -51,7 +51,7 @@ public class _startGame : MonoBehaviour
         Counter.SetActive(false);
         toggle = true;
 
-        // GameManager.Instance.UpdateGameState(GameState.OnPlayMode);
+        
     }
 
 
@@ -76,11 +76,7 @@ public class _startGame : MonoBehaviour
 
 
 
-    //Game over menus
-    public void SelectLevel()
-    {
-        
-    }
+
 
     public void ExitToMainMenu()
     {

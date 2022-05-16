@@ -18,6 +18,8 @@ public class SandTimer : MonoBehaviour
     public Slider timerSlider;
     [SerializeField]
     private GameObject Wave;
+    
+
 
 
     // Start is called before the first frame update
@@ -36,16 +38,22 @@ public class SandTimer : MonoBehaviour
         if (haslimit && ((countdown && TimeRemaining <= timerLimit) ||( !countdown && TimeRemaining >= timerLimit)))
         {
             TimeRemaining = timerLimit;
-             
+            Debug.Log("Time runs out ");
+            GameManager.Instance.UpdateGameState(GameState.LevelFailed);
+            
         }
         setTimeText();
         timerSlider.value = TimeRemaining;
-        if (timerSlider.value == 70)
+        if (timerSlider.value == 50)
         {
-            Wave.SetActive(true);
 
+            Wave.SetActive(true);
+         
+            spawngerms.Instance.SpawnTime-=1f;
             Debug.Log("Approaching waves of germs!");
-            await Task.Delay(3000);
+            await Task.Delay(1000);
+         
+        
             Wave.SetActive(false);
         }
       
@@ -61,22 +69,13 @@ public class SandTimer : MonoBehaviour
 
             string textTime = string.Format("{0:0}:{1:00}", minutes, seconds);
             Timer.text = textTime;
-        if (time<=0)
-        {
-            GameManager.Instance.UpdateGameState(GameState.LevelFailed);
-        }
+       
      
 
     }
 
 
     
-
-    private async void FixedUpdate()
-    {
-      
-       
-    }
     
 
 }
