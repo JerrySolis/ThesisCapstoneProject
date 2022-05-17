@@ -6,10 +6,9 @@ using UnityEngine.UI;
 
 public class UnitManager : MonoBehaviour
 {
-    [SerializeField] private GameObject _SettiingsPnl,  _GameOverMenu, _LevelFinish, _Story, _CategoryMenu;
-    public GameObject _LevelFailedPnl, Child_LevelFailedPnl, Child_LevelFinishPnl, Comic2;
-    [SerializeField] private Button _SettingsBtn, menuIG;
- 
+    [SerializeField] private GameObject _SettiingsPnl, _LevelFinish,  _CategoryMenu;
+    public GameObject _LevelFailedPnl, Child_LevelFailedPnl, Child_LevelFinishPnl;
+    public Button _SettingsBtn;
     public static UnitManager Instance;
 
 
@@ -32,16 +31,19 @@ public class UnitManager : MonoBehaviour
         _SettiingsPnl.SetActive(state == GameState.SettingsMenu);
         _LevelFailedPnl.SetActive(state == GameState.LevelFailed);
         _LevelFinish.SetActive(state == GameState.LevelFinish);
-        _Story.SetActive(state == GameState.StoryBegin);
+  
         _CategoryMenu.SetActive(state == GameState.InGameMenu);
-       
+  
+
+
+
 
 
     }
 
 
     //Buttons accessing the Game State selection
-    
+
     public void settingBtn()
     {
         GameManager.Instance.UpdateGameState(GameState.SettingsMenu);
@@ -56,23 +58,60 @@ public class UnitManager : MonoBehaviour
     {
         SceneManager.LoadSceneAsync("Floor 1 Level 1");
     }
-
-    public void Destroy()
+    public void Restartlvl2Btn()
     {
-        Destroy(_LevelFailedPnl);
+        SceneManager.LoadSceneAsync("Floor 1 Level 2");
+    }
+    public void Restartlvl3Btn()
+    {
+        SceneManager.LoadSceneAsync("Floor 1 Level 2");
     }
 
     public void MenuIG()
     {
 
-        GameManager.Instance.UpdateGameState(GameState.InGameMenu);
 
+        GameManager.Instance.UpdateGameState(GameState.InGameMenu);
     }
 
     public void Floor1SelectLevelbtn()
     {
         GameManager.Instance.UpdateGameState(GameState.SelectLevel);
     }
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -88,6 +127,13 @@ public class UnitManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+       
     }
+
+
+
+
+
+
 }
+

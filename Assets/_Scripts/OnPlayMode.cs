@@ -21,17 +21,18 @@ public class OnPlayMode : MonoBehaviour
     {
         string RemainingGerm = string.Format("{00}", GermLeft);
         remainingGerm.text = RemainingGerm;
+
        
     }
     public void GermsLeft()
     {
         GermLeft--;
          if (GermLeft == 0)
-        {
+         {
             GameManager.Instance.UpdateGameState(GameState.LevelFinish);
 
-        }
-     
+         }
+      
     }
     void Awake()
     {

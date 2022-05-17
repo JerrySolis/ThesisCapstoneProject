@@ -10,13 +10,14 @@ public class _startGame : MonoBehaviour
     [SerializeField] private GameObject Counter, Note, tri, too, won, go;
 
     public static _startGame Instance;
-    bool toggle = false;
+    public bool toggle = false;
     // Start is called before the first frame update
     void Start()
     {
         Debug.Log("Click start button and begin the game!");
 
        Time.timeScale = 0f;
+       
 
        
     }
@@ -27,7 +28,7 @@ public class _startGame : MonoBehaviour
         if (toggle == true)
         {
             Time.timeScale = 1f;
-           
+            
         }
     }
 
@@ -50,8 +51,8 @@ public class _startGame : MonoBehaviour
         await Task.Delay(1000);
         Counter.SetActive(false);
         toggle = true;
+   
 
-        
     }
 
 
@@ -68,6 +69,7 @@ public class _startGame : MonoBehaviour
     {
         toggle = true;
         Time.timeScale = 1f;
+        
     }
     void Awake()
     {

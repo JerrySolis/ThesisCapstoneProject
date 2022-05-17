@@ -22,13 +22,27 @@ public class Player_HealthBar : MonoBehaviour
         slider.value = health;
         //changing gradient color of fill image in slider
         fill.color = gradient.Evaluate(slider.normalizedValue);
-        if (slider.value == 0)
+ 
+    }
+    void GameOver(int health)
+    {
+    
+
+        if (slider.value > 0)
+        {
+            slider.value = health;
+            Invoke("GameOver", 1.0f);
+        }
+        else
         {
             Debug.Log("Game Over Player just Died!");
+            GameManager.Instance.UpdateGameState(GameState.LevelFailed);
             _startGame.Instance.PauseGame();
             Debug.Log("The game is pause!");
-
-            // Promp Game over Window using Game Manager;
+            GameManager.Instance.UpdateGameState(GameState.LevelFailed);
         }
+
+
+
     }
 }

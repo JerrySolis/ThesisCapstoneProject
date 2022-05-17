@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -6,6 +7,7 @@ using UnityEngine.UI;
 
 public class SandTimer : MonoBehaviour
 {
+    public static SandTimer Instance;
     [Header("Component")]
     public Text Timer;
     [Header("Timer settings")]
@@ -27,35 +29,26 @@ public class SandTimer : MonoBehaviour
     {
         timerSlider.maxValue = TimeRemaining;
         timerSlider.value = TimeRemaining;
-
+        countDownTimer();
 
     }
 
     // Update is called once per frame
-    async void Update()
+    void Update()
     {
-        TimeRemaining = countdown ? TimeRemaining -= Time.deltaTime : TimeRemaining += Time.deltaTime;
+       
+      TimeRemaining = countdown ? TimeRemaining -= Time.deltaTime : TimeRemaining += Time.deltaTime;
         if (haslimit && ((countdown && TimeRemaining <= timerLimit) ||( !countdown && TimeRemaining >= timerLimit)))
         {
             TimeRemaining = timerLimit;
-            Debug.Log("Time runs out ");
-            GameManager.Instance.UpdateGameState(GameState.LevelFailed);
-            
+
+           // GameManager.Instance.UpdateGameState(GameState.LevelFailed);
+
         }
         setTimeText();
         timerSlider.value = TimeRemaining;
-        if (timerSlider.value == 50)
-        {
-
-            Wave.SetActive(true);
-         
-            spawngerms.Instance.SpawnTime-=1f;
-            Debug.Log("Approaching waves of germs!");
-            await Task.Delay(1000);
-         
-        
-            Wave.SetActive(false);
-        }
+    
+      
       
 
     }
@@ -69,13 +62,45 @@ public class SandTimer : MonoBehaviour
 
             string textTime = string.Format("{0:0}:{1:00}", minutes, seconds);
             Timer.text = textTime;
-       
-     
-
     }
 
 
-    
-    
+
+
+    //Gameover This Error takes me 3 days to debug and its just fvcking Invoke countdown!!!!
+    async void countDownTimer()
+    {
+        int Countdowns = (int)TimeRemaining;
+        if (Countdowns>0)
+        {
+
+            if (Countdowns == 70)
+            {
+
+                Wave.SetActive(true);
+
+                spawngerms.Instance.SpawnTime = 1.0f;
+                Debug.Log("Approaching waves of germs!");
+                await Task.Delay(2000);
+                Wave.SetActive(false);
+            }
+
+
+            Countdowns--;
+            Invoke("countDownTimer", 1.0f);
+
+        }
+        else
+        {
+            GameManager.Instance.UpdateGameState(GameState.LevelFailed);
+        }
+      
+    }
+
+
+    void Awake()
+    {
+        Instance = this;
+    }
 
 }
