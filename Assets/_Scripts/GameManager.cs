@@ -104,6 +104,8 @@ public class GameManager : MonoBehaviour
     private async void HandleOnLevelFinish()
     {
         Debug.Log("Yay! Level Finish!");
+        LevelManager.Instance.SetLevelState();
+        GermDataMAnager.Instance.SetGermData();
         await Task.Delay(2000);
         _startGame.Instance.PauseGame();
         UnitManager.Instance.Child_LevelFinishPnl.SetActive(true);
@@ -137,7 +139,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Starting the game");
         Debug.Log("Now playing..");
         await Task.Delay(5000);
-        //LevelManager.Instance.Floor1UpdateCurrentLevel(LevelState.Floor1Level1);
+        LevelManager.Instance.HandleOnFloor1Level1();
     }
 
 

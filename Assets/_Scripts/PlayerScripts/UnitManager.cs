@@ -31,7 +31,6 @@ public class UnitManager : MonoBehaviour
         _SettiingsPnl.SetActive(state == GameState.SettingsMenu);
         _LevelFailedPnl.SetActive(state == GameState.LevelFailed);
         _LevelFinish.SetActive(state == GameState.LevelFinish);
-  
         _CategoryMenu.SetActive(state == GameState.InGameMenu);
   
 

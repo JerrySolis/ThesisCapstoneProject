@@ -11,7 +11,7 @@ public class spawngerms : MonoBehaviour
     public static bool spawnAllowed;
     public float SpawnTime;
     private int Counts = 0;
-
+    public int SpawnRemaining;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,7 +43,7 @@ public class spawngerms : MonoBehaviour
     // Update is called once per frame
      void Update()
      {
-        if (Counts >= 29)
+        if (Counts >= SpawnRemaining)
         {
             spawnAllowed = false;
         }

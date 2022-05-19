@@ -1350,16 +1350,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a64257fbe6113cf409f26f49fe75c291, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  State: 0
-  F1Level2Button: {fileID: 0}
-  F1Level3Button: {fileID: 0}
-  F1Level4Button: {fileID: 0}
-  F1Level5Button: {fileID: 0}
-  F1Level6Button: {fileID: 0}
-  F1Level7Button: {fileID: 0}
-  F1Level8Button: {fileID: 0}
-  F1Level9Button: {fileID: 0}
-  F1Level10Button: {fileID: 0}
+  F1Level2Button: {fileID: 750912283}
+  F1Level3Button: {fileID: 822086041}
+  F1Level4Button: {fileID: 1364930604}
+  F1Level5Button: {fileID: 470317450}
+  F1Level6Button: {fileID: 1492699332}
+  F1Level7Button: {fileID: 799599141}
+  F1Level8Button: {fileID: 1892778867}
+  F1Level9Button: {fileID: 236919798}
+  F1Level10Button: {fileID: 1761609058}
+  Floor1Levels: 1
 --- !u!1 &73954041
 GameObject:
   m_ObjectHideFlags: 0
@@ -3188,7 +3188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Timer: {fileID: 727073056}
-  TimeRemaining: 110
+  TimeRemaining: 120
   countdown: 1
   haslimit: 1
   timerLimit: 0
@@ -4805,7 +4805,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.815}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -57, y: 653}
+  m_AnchoredPosition: {x: -1242.0002, y: -8653.001}
   m_SizeDelta: {x: 456.7341, y: 769.2363}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!61 &478513352
@@ -6019,7 +6019,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.815}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -43, y: 957}
+  m_AnchoredPosition: {x: -1287.6003, y: -8697.001}
   m_SizeDelta: {x: 456.7341, y: 769.2363}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!61 &562262756
@@ -10392,7 +10392,7 @@ MonoBehaviour:
   _default: {fileID: 21300000, guid: 07bdf183aa593114694c84c964c3129c, type: 3}
   _pressed: {fileID: 21300000, guid: 07bdf183aa593114694c84c964c3129c, type: 3}
   _audioFX: {fileID: 8300000, guid: 884854e50d57ca2448dace2759d746b1, type: 3}
-  _audioSource: {fileID: 0}
+  _audioSource: {fileID: 11931595}
 --- !u!114 &880269488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10437,19 +10437,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1629340257}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -10460,6 +10448,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 447471516}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &880269489
 MonoBehaviour:
@@ -14770,7 +14770,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.815}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 168, y: -1230}
+  m_AnchoredPosition: {x: -1356, y: -8710}
   m_SizeDelta: {x: 617.3027, y: 806.2729}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!61 &1440140632
@@ -15106,6 +15106,7 @@ MonoBehaviour:
   - {fileID: 478513351}
   - {fileID: 1440140631}
   SpawnTime: 3
+  SpawnRemaining: 36
 --- !u!114 &1468928113
 MonoBehaviour:
   m_ObjectHideFlags: 0
