@@ -3188,7 +3188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Timer: {fileID: 727073056}
-  TimeRemaining: 120
+  TimeRemaining: 110
   countdown: 1
   haslimit: 1
   timerLimit: 0
@@ -3891,7 +3891,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Floor 1 level 1
+  m_text: Floor 1 level 2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1d8cd2ded8b4830419a2b2aad5b9ca51, type: 2}
   m_sharedMaterial: {fileID: -6610269066124430064, guid: 1d8cd2ded8b4830419a2b2aad5b9ca51, type: 2}
@@ -4047,7 +4047,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ' level 1 Failed'
+  m_text: ' level 2 Failed'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1d8cd2ded8b4830419a2b2aad5b9ca51, type: 2}
   m_sharedMaterial: {fileID: -6610269066124430064, guid: 1d8cd2ded8b4830419a2b2aad5b9ca51, type: 2}
@@ -6866,7 +6866,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ' level 1 Finish!'
+  m_text: ' level 2 Finish!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1d8cd2ded8b4830419a2b2aad5b9ca51, type: 2}
   m_sharedMaterial: {fileID: -6610269066124430064, guid: 1d8cd2ded8b4830419a2b2aad5b9ca51, type: 2}
@@ -12667,7 +12667,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Tap germs '
+  m_text: Kill germs before infection time runsout!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1d8cd2ded8b4830419a2b2aad5b9ca51, type: 2}
   m_sharedMaterial: {fileID: -6610269066124430064, guid: 1d8cd2ded8b4830419a2b2aad5b9ca51, type: 2}
@@ -12694,7 +12694,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 44.1
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -15105,7 +15105,7 @@ MonoBehaviour:
   - {fileID: 562262755}
   - {fileID: 478513351}
   - {fileID: 1440140631}
-  SpawnTime: 3
+  SpawnTime: 2.5
   SpawnRemaining: 36
 --- !u!114 &1468928113
 MonoBehaviour:
@@ -17644,7 +17644,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Floor 1 level 1
+  m_text: Floor 1 level 2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1d8cd2ded8b4830419a2b2aad5b9ca51, type: 2}
   m_sharedMaterial: {fileID: -6610269066124430064, guid: 1d8cd2ded8b4830419a2b2aad5b9ca51, type: 2}
@@ -18979,7 +18979,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Floor 1 level 1
+  m_text: Floor 1 level 2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1d8cd2ded8b4830419a2b2aad5b9ca51, type: 2}
   m_sharedMaterial: {fileID: -6610269066124430064, guid: 1d8cd2ded8b4830419a2b2aad5b9ca51, type: 2}
