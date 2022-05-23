@@ -13,8 +13,9 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     public GameState State;
-
+    public bool intro = true;
     public static event Action<GameState> OnGameStateChange;
+
 
     void Awake()
     {
@@ -23,7 +24,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        UpdateGameState(GameState.Intro);
+            UpdateGameState(GameState.Intro);
     }
 
     public void UpdateGameState(GameState newState)
@@ -44,9 +45,6 @@ public class GameManager : MonoBehaviour
             case GameState.SelectLevel:
                 HandleSelectLevel();
                 break;
-         /*   case GameState.StartLevel:
-                HandleStartLevel();
-                break;                    */
             case GameState.StartGame:
                 HandleOnStart();
                 break;
@@ -56,15 +54,19 @@ public class GameManager : MonoBehaviour
             case GameState.LevelFailed:
                 HandleOnLevelFailed();
                 break;
-            case GameState.GameOverMenu:
-                HandleOnGameOverMenu();
-                break;
+          
             case GameState.LevelFinish:
                 HandleOnLevelFinish();
                 break;
             case GameState.StoryBegin:
                 HandleOnStoryBegin();
                 break;
+            case GameState.InGameMenu:
+                HandleOnInGameMenu();
+                break;
+
+
+
             //put new case here!
 
 
@@ -79,6 +81,17 @@ public class GameManager : MonoBehaviour
         OnGameStateChange?.Invoke(newState);
     }
 
+    private void HandleOnFloor1level2()
+    {
+        Debug.Log("Congrats on finishing Level 1 ! Floor1 level 2 on Level select now interactible!!!");
+    }
+
+    private void HandleOnInGameMenu()
+    {
+        Debug.Log("Hold Switch case for choosing category");
+
+    }
+
     private  void HandleOnStoryBegin()
     {
         
@@ -91,6 +104,8 @@ public class GameManager : MonoBehaviour
     private async void HandleOnLevelFinish()
     {
         Debug.Log("Yay! Level Finish!");
+        LevelManager.Instance.SetLevelState();
+        GermDataMAnager.Instance.SetGermData();
         await Task.Delay(2000);
         _startGame.Instance.PauseGame();
         UnitManager.Instance.Child_LevelFinishPnl.SetActive(true);
@@ -98,11 +113,7 @@ public class GameManager : MonoBehaviour
        
     }
 
-    private void HandleOnGameOverMenu()
-    {
-        Debug.Log("Directed to GameOver Menu");
-        UnitManager.Instance._LevelFailedPnl.SetActive(false);
-    }
+    
 
     private async void HandleOnLevelFailed()
     {
@@ -110,7 +121,8 @@ public class GameManager : MonoBehaviour
         await Task.Delay(2000);
        _startGame.Instance.PauseGame();
         UnitManager.Instance.Child_LevelFailedPnl.SetActive(true);
-        
+       
+
     }
 
     private void HandleOnSettingsMenu()
@@ -127,10 +139,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Starting the game");
         Debug.Log("Now playing..");
         await Task.Delay(5000);
-        SceneManager.LoadSceneAsync("Floor 1 Level 1");
-     
-
-
+        LevelManager.Instance.HandleOnFloor1Level1();
     }
 
 
@@ -173,10 +182,6 @@ public class GameManager : MonoBehaviour
 
 
 
-    private void HandleStartLevel()
-    {
-        //StartLevel
-    }
 
 
     private void HandleSelectLevel()
@@ -217,7 +222,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+    
     }
 
    
@@ -230,15 +235,12 @@ public enum GameState
     GameMenu,
     SelectCategory,
     SelectLevel,
-  //  StartLevel,
     OnPlayMode,
     StartGame,
     SettingsMenu,
     LevelFailed,
-    GameOverMenu,
     LevelFinish,
     StoryBegin,
-
+    InGameMenu,
     Quit
-
 }
