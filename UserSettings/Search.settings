@@ -7,12 +7,15 @@ onBoardingDoNotAskAgain = true
 showPackageIndexes = false
 showStatusBar = false
 scopes = {
-	"last_search.8040E7BB" = "Open"
+	"last_search.8040E7BB" = ""
 	"OpenInspectorPreview.8040E7BB" = "0"
 	"currentGroup.8040E7BB" = "all"
 	"last_search.7BEC51F9" = "sta"
 	"OpenInspectorPreview.7BEC51F9" = "0"
 	"currentGroup.7BEC51F9" = "asset"
+	"last_search.B064B029" = ""
+	"OpenInspectorPreview.B064B029" = "0"
+	"currentGroup.B064B029" = "all"
 }
 providers = {
 	adb = {
@@ -57,6 +60,8 @@ providers = {
 	}
 }
 recentSearches = [
+	"t"
+	"as"
 	"s"
 ]
 searchItemFavorites = [
